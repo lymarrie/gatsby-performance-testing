@@ -1,3 +1,9 @@
+const dotenv = require('dotenv')
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
+
 module.exports = {
   siteMetadata: {
     title: "gatsby-performance-testing",
@@ -6,8 +12,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "_cP38r9APQev4e4sUUfapmtQUEDGGN6ApKNPFVHcPJ8",
-        spaceId: "",
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: "wa3c4vw7o6ck"
       },
     },
   ],
